@@ -1,0 +1,18 @@
+apiVersion: v1 
+kind: Pod
+metadata:
+  name: fss-web-pod
+  namespace: prod-ns
+spec:
+  containers:
+  - name: web-app
+    image:  muralisocial123/fss-web-app:latest
+    resources:
+      limits:
+        memory: "128Mi"
+        cpu: "200m"
+      requests:
+        memory: "70Mi"
+        cpu: "100m"  
+    ports:
+      - containerPort: 80
